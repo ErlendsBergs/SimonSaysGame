@@ -112,15 +112,30 @@ void Game::render()
 	m_window.clear();
 
 	// Draw on window
-	m_window.draw(rect);
+	m_window.draw(greenButton);
+	m_window.draw(redButton);
+	m_window.draw(yellowButton);
+	m_window.draw(blueButton);
 
 	m_window.display();
 }
 
 void Game::buttons()
 {
-	rect.setSize(sf::Vector2f(200.0f, 200.0f));
-	rect.setPosition(300.0f, 50.0f);
-	rect.setFillColor(sf::Color::Green);
+	greenButton.setSize(sf::Vector2f(200.0f, 200.0f));
+	greenButton.setPosition(300.0f, 50.0f);
+	greenButton.setFillColor(sf::Color::Green);
+
+	redButton.setSize(sf::Vector2f(200.0f, 200.0f));
+	redButton.setPosition(515.0f, 50.0f);
+	redButton.setFillColor(sf::Color::Red);
+
+	yellowButton.setSize(sf::Vector2f(200.0f, 200.0f));
+	yellowButton.setPosition(300.0f, 265.0f);
+	yellowButton.setFillColor(sf::Color::Yellow);
+
+	blueButton.setSize(sf::Vector2f(200.0f, 200.0f));
+	blueButton.setPosition(515.0f, 265.0f);
+	blueButton.setFillColor(sf::Color::Blue);
 }
 

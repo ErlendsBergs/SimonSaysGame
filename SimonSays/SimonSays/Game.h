@@ -32,7 +32,10 @@ private:
 	void buttons();
 
 	// Game objects
-	sf::RectangleShape rect;
+	sf::RectangleShape greenButton;
+	sf::RectangleShape redButton;
+	sf::RectangleShape yellowButton;
+	sf::RectangleShape blueButton;
 
 
 	sf::RenderWindow m_window; // main SFML window
