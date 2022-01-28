@@ -68,8 +68,24 @@ void Game::initializeText()
 	m_titleText.setFont(m_font);
 	m_titleText.setCharacterSize(48);
 	m_titleText.setFillColor(sf::Color::Black);
-	m_titleText.setOutlineColor(sf::Color::Blue);
-	m_titleText.setOutlineThickness(4.0f);
+	m_titleText.setOutlineColor(sf::Color::White);
+	m_titleText.setOutlineThickness(3.0f);
+
+	m_greenText.setFont(m_font);
+	m_greenText.setCharacterSize(24);
+	m_greenText.setFillColor(sf::Color::Green);
+
+	m_yellowText.setFont(m_font);
+	m_yellowText.setCharacterSize(24);
+	m_yellowText.setFillColor(sf::Color::Yellow);
+
+	m_redText.setFont(m_font);
+	m_redText.setCharacterSize(24);
+	m_redText.setFillColor(sf::Color::Red);
+
+	m_blueText.setFont(m_font);
+	m_blueText.setCharacterSize(24);
+	m_blueText.setFillColor(sf::Color::Blue);
 }
 
 void Game::initializeFont()
@@ -140,6 +156,10 @@ void Game::render()
 	m_window.draw(blueButton);
 
 	m_window.draw(m_titleText);
+	m_window.draw(m_greenText);
+	m_window.draw(m_yellowText);
+	m_window.draw(m_redText);
+	m_window.draw(m_blueText);
 
 	m_window.display();
 }
@@ -167,5 +187,17 @@ void Game::gameTexts()
 {
 	m_titleText.setString("S I M O N");
 	m_titleText.setPosition(20.0f, 25.0f);
+
+	m_greenText.setString("Press green for \n Easy Mode");
+	m_greenText.setPosition(20.0f, 100.0f);
+
+	m_yellowText.setString("Press yellow for \n Normal Mode");
+	m_yellowText.setPosition(20.0f, 200.0f);
+
+	m_redText.setString("Press red for \n Hard Mode");
+	m_redText.setPosition(20.0f, 300.0f);
+
+	m_blueText.setString("Press blue to \n Exit Game");
+	m_blueText.setPosition(20.0f, 400.0f);
 }
 

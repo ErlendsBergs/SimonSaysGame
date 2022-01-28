@@ -45,6 +45,10 @@ private:
 
 	// Text and Font
 	sf::Text m_titleText;
+	sf::Text m_greenText;
+	sf::Text m_redText;
+	sf::Text m_yellowText;
+	sf::Text m_blueText;
 	sf::Font m_font;
 
 
