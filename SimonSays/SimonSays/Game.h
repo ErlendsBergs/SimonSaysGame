@@ -22,6 +22,9 @@ public:
 	void run();
 
 private:
+	// Initalize
+	void initializeText();
+	void initializeFont();
 
 	// Functions
 	void processEvents();
@@ -29,13 +32,20 @@ private:
 	void update(sf::Time t_deltaTime);
 	void render();
 
-	void buttons();
+	void initializeButtons();
+
+	void gameTexts();
+
 
 	// Game objects
 	sf::RectangleShape greenButton;
 	sf::RectangleShape redButton;
 	sf::RectangleShape yellowButton;
 	sf::RectangleShape blueButton;
+
+	// Text and Font
+	sf::Text m_titleText;
+	sf::Font m_font;
 
 
 	sf::RenderWindow m_window; // main SFML window

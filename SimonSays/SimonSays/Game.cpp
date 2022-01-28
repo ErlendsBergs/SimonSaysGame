@@ -20,7 +20,11 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
 	m_exitGame{false} //when true game will exit
 {
-	buttons();
+	initializeFont();
+	initializeText();
+	initializeButtons();
+
+	gameTexts();
 }
 
 /// <summary>
@@ -58,6 +62,24 @@ void Game::run()
 		render(); // as many as possible
 	}
 }
+
+void Game::initializeText()
+{
+	m_titleText.setFont(m_font);
+	m_titleText.setCharacterSize(48);
+	m_titleText.setFillColor(sf::Color::Black);
+	m_titleText.setOutlineColor(sf::Color::Blue);
+	m_titleText.setOutlineThickness(4.0f);
+}
+
+void Game::initializeFont()
+{
+	if (!m_font.loadFromFile("ASSETS/FONTS/ariblk.ttf"))
+	{
+		std::cout << "ERROR: Failed to load font." << std::endl;
+	}
+}
+
 /// <summary>
 /// handle user and system events/ input
 /// get key presses/ mouse moves etc. from OS
@@ -117,10 +139,12 @@ void Game::render()
 	m_window.draw(yellowButton);
 	m_window.draw(blueButton);
 
+	m_window.draw(m_titleText);
+
 	m_window.display();
 }
 
-void Game::buttons()
+void Game::initializeButtons()
 {
 	greenButton.setSize(sf::Vector2f(200.0f, 200.0f));
 	greenButton.setPosition(300.0f, 50.0f);
@@ -137,5 +161,11 @@ void Game::buttons()
 	blueButton.setSize(sf::Vector2f(200.0f, 200.0f));
 	blueButton.setPosition(515.0f, 265.0f);
 	blueButton.setFillColor(sf::Color::Blue);
+}
+
+void Game::gameTexts()
+{
+	m_titleText.setString("S I M O N");
+	m_titleText.setPosition(20.0f, 25.0f);
 }
 
